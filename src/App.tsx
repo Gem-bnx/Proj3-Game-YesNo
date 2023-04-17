@@ -1,25 +1,23 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React from "react";
+import { Route } from "react-router";
+import { Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Create from "./pages/Create";
+import Submit from "./pages/Submit";
+import Answer from "./pages/Answer";
+import Summary from "./pages/Summary";
+import "./App.css"
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/create-game" element={<Create></Create>}></Route>
+        <Route path="/submit-answer" element={<Submit></Submit>}></Route>
+        <Route path="/answer" element={<Answer></Answer>}></Route>
+        <Route path="/result" element={<Summary></Summary>}></Route>
+      </Routes>
+    </>
   );
 }
 
